@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.home.passes.PassesAdapterVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_games"
+            style="@style/cv_base"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            android:layout_marginBottom="@dimen/dp8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/blue"
+                android:padding="@dimen/dp16">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_card"
+                    android:layout_width="@dimen/dp24"
+                    android:layout_height="@dimen/dp24"
+                    android:src="@drawable/ic_pass"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_transfer"
+                    style="@style/btn_yellow"
+                    setRenewButton="@{viewModel.model.batteryLeft}"
+                    android:text="@string/renew_now"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_name"
+                    style="@style/tv_24_base"
+                    android:layout_marginTop="@dimen/dp32"
+                    setPassName="@{viewModel.model.id}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_card"
+                    tools:text="Acrd ** 22" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontal_middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.33" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontal_middle_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.66" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_chances"
+                    style="@style/tv_12_grey"
+                    android:layout_marginTop="@dimen/dp32"
+                    android:layout_marginEnd="@dimen/dp8"
+                    android:text="@string/chances_left"
+                    app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_expiry"
+                    style="@style/tv_12_grey"
+                    android:layout_marginStart="@dimen/dp8"
+                    android:layout_marginEnd="@dimen/dp8"
+                    android:gravity="center"
+                    android:text="@string/expires"
+                    app:layout_constraintEnd_toStartOf="@+id/horizontal_middle_1"
+                    app:layout_constraintStart_toEndOf="@+id/horizontal_middle"
+                    app:layout_constraintTop_toTopOf="@+id/tv_chances" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_cost"
+                    style="@style/tv_12_grey"
+                    android:layout_marginStart="@dimen/dp8"
+                    android:gravity="end"
+                    android:text="@string/cost"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/horizontal_middle_1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_chances" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_chances_value"
+                    style="@style/tv_16_base"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:layout_marginEnd="@dimen/dp8"
+                    android:text="@{String.valueOf(viewModel.model.batteryLeft)}"
+                    app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_chances"
+                    tools:text="11" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_expiry_value"
+                    style="@style/tv_16_base"
+                    android:layout_marginStart="@dimen/dp8"
+                    android:layout_marginEnd="@dimen/dp8"
+                    android:gravity="center"
+                    android:text="@string/none"
+                    app:layout_constraintEnd_toStartOf="@+id/horizontal_middle_1"
+                    app:layout_constraintStart_toEndOf="@+id/horizontal_middle"
+                    app:layout_constraintTop_toTopOf="@+id/tv_chances_value" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_cost_value"
+                    style="@style/tv_16_base"
+                    android:layout_marginStart="@dimen/dp8"
+                    android:gravity="end"
+                    android:text="@{String.valueOf(viewModel.model.passLimit)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/horizontal_middle_1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_chances_value"
+                    tools:text="$11 KHO" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

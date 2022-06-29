@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<file_paths>
+    <external-path
+        name="images"
+        path="/" />
+    <external-path
+        name="ext"
+        path="." />
+    <external-path
+        name="attachment_file"
+        path="." />
+    <external-path
+        name="external_files"
+        path="." />
+
+    <cache-path
+        name="shared_images"
+        path="images/" />
+    <cache-path
+        name="int_cache"
+        path="." />
+    <cache-path
+        name="sg_share_images"
+        path="sg_temp_dir/" />
+
+    <files-path
+        name="int_files"
+        path="." />
+
+    <external-cache-path
+        name="ext_cache"
+        path="." />
+    <external-files-path
+        name="ext_files"
+        path="." />
+    <external-cache-path
+        name="cache"
+        path="camera" />
+    <external-cache-path
+        name="external_cache_files"
+        path="." />
+    <external-files-path
+        name="external_files_files"
+        path="." />
+</file_paths>

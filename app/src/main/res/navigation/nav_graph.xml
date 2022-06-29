@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@+id/splash_fragment">
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="land.kho.meta.presentation.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splash_fragment_to_create_wallet_fragment"
+            app:destination="@id/create_wallet_fragment"
+            app:popUpTo="@id/navigation_graph"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="createWallet"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_splash_fragment_to_my_game_fragment"
+            app:destination="@id/my_game_fragment"
+            app:popUpTo="@id/navigation_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_fragment_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:popUpTo="@id/navigation_graph"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/meta_fragment"
+        android:name="land.kho.meta.presentation.meta.MetaFragment"
+        tools:layout="@layout/fragment_meta">
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_meta_fragment_to_wallet_fragment"
+            app:destination="@id/wallet_fragment" />
+        <action
+            android:id="@+id/action_meta_fragment_to_game_fragment"
+            app:destination="@id/game_fragment">
+            <argument
+                android:name="token"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/game_fragment"
+        android:name="land.kho.meta.presentation.game.GameFragment"
+        tools:layout="@layout/fragment_game">
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_game_fragment_to_my_game_fragment"
+            app:destination="@id/my_game_fragment" />
+
+        <action
+            android:id="@+id/action_game_fragment_to_refer_fragment"
+            app:destination="@id/refer_fragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/wallet_fragment"
+        android:name="land.kho.meta.presentation.wallet.WalletFragment"
+        tools:layout="@layout/fragment_wallet">
+
+    </fragment>
+    <fragment
+        android:id="@+id/create_wallet_fragment"
+        android:name="land.kho.meta.presentation.wallet.createWallet.CreateWalletFragment"
+        tools:layout="@layout/fragment_create_wallet">
+        <argument
+            android:name="createWallet"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_create_wallet_fragment_to_my_game_fragment"
+            app:destination="@id/my_game_fragment"
+            app:popUpTo="@id/navigation_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/avatar_selection_fragment"
+        android:name="land.kho.meta.presentation.avatarselection.AvatarSelectionFragment"
+        tools:layout="@layout/fragment_avatar_selection">
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_avatar_selection_fragment_to_meta_fragment"
+            app:destination="@id/meta_fragment"
+            app:popUpTo="@id/navigation_graph"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="token"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/my_game_fragment"
+        android:name="land.kho.meta.presentation.home.game.MyGameFragment"
+        tools:layout="@layout/fragment_my_game">
+        <action
+            android:id="@+id/action_my_game_fragment_to_meta_fragment"
+            app:destination="@id/meta_fragment">
+            <argument
+                android:name="token"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_my_game_fragment_to_game_fragment"
+            app:destination="@id/game_fragment">
+            <argument
+                android:name="token"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_my_game_fragment_to_avatar_selection_fragment"
+            app:destination="@id/avatar_selection_fragment">
+            <argument
+                android:name="token"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/earning_fragment"
+        android:name="land.kho.meta.presentation.home.earning.EarningFragment"
+        tools:layout="@layout/fragment_earning" />
+    <fragment
+        android:id="@+id/passes_fragment"
+        android:name="land.kho.meta.presentation.home.passes.PassesFragment"
+        tools:layout="@layout/fragment_passes" />
+    <fragment
+        android:id="@+id/refer_fragment"
+        android:name="land.kho.meta.presentation.home.refer.ReferFragment"
+        tools:layout="@layout/fragment_refer" />
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="land.kho.meta.presentation.login.LoginFragment"
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_login_fragment_to_create_wallet_fragment"
+            app:destination="@id/create_wallet_fragment"
+            app:popUpTo="@id/navigation_graph"
+            app:popUpToInclusive="true">
+
+            <argument
+                android:name="createWallet"
+                app:argType="boolean" />
+
+        </action>
+    </fragment>
+
+
+</navigation>

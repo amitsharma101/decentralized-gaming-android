@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.wallet.bsReceipt.BsReceiptVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/bs_base"
+        android:padding="@dimen/dp32"
+        tools:background="@color/blue"
+        tools:context=".presentation.wallet.bsReceipt.BsReceiptFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_type"
+            style="@style/tv_16_yellow"
+            tools:text="@string/receive"
+            android:text="@{viewModel.modal.type}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_separator"
+            style="@style/view_horizontal_white"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_type" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_status"
+            visibleOrGone="@{viewModel.isReceipt}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintBottom_toTopOf="@+id/cl_receipt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_separator">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontal_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_status"
+                style="@style/tv_16_base"
+                android:layout_marginEnd="@dimen/dp8"
+                android:text="@string/status"
+                app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_current_status"
+                style="@style/tv_16_base"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginEnd="@dimen/dp8"
+                app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status"
+                android:text="@string/confirmed" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_view"
+                style="@style/tv_12_yellow"
+                android:layout_marginStart="@dimen/dp8"
+                android:gravity="end"
+                android:background="@drawable/ripple_grey"
+                android:text="@string/view_on_block_explorer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+                app:layout_constraintTop_toTopOf="@+id/tv_status" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_copy"
+                style="@style/tv_12_yellow"
+                android:layout_marginStart="@dimen/dp8"
+                android:gravity="end"
+                android:background="@drawable/ripple_grey"
+                android:text="@string/copy_transaction_id"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+                app:layout_constraintTop_toTopOf="@+id/tv_current_status" />
+
+            <View
+                android:id="@+id/view_separator_2"
+                style="@style/view_horizontal_white"
+                android:layout_marginTop="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_copy" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_receipt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_status">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontal_middle_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_from"
+                style="@style/tv_16_base"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/from"
+                app:layout_constraintEnd_toStartOf="@+id/horizontal_middle_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_to"
+                style="@style/tv_16_base"
+                android:layout_marginStart="@dimen/dp8"
+                android:gravity="end"
+                android:text="@string/to"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/horizontal_middle_2"
+                app:layout_constraintTop_toTopOf="@+id/tv_from" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_sender_address"
+                style="@style/tv_12_base"
+                android:layout_marginTop="@dimen/dp8"
+                android:layout_marginEnd="@dimen/dp16"
+                setAddress="@{viewModel.modal.from}"
+                app:layout_constraintEnd_toStartOf="@+id/horizontal_middle_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_from"
+                tools:text="xx" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_receiver_address"
+                style="@style/tv_12_base"
+                android:layout_marginStart="@dimen/dp16"
+                android:gravity="end"
+                tools:text="xx"
+                setAddress="@{viewModel.modal.to}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/horizontal_middle_2"
+                app:layout_constraintTop_toTopOf="@+id/tv_sender_address" />
+
+            <View
+                android:id="@+id/view_separator_3"
+                style="@style/view_horizontal_white"
+                android:layout_marginTop="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_receiver_address" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_transaction"
+                style="@style/tv_16_base"
+                android:layout_marginTop="@dimen/dp16"
+                android:text="@string/transaction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_separator_3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_receipt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_transaction"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_receipt" />
+
+            <View
+                android:id="@+id/view_separator_4"
+                style="@style/view_horizontal_white"
+                android:layout_marginTop="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_receipt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_confirm"
+            visibleOrGone="@{!viewModel.isReceipt}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_receipt">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                style="@style/btn_yellow"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/cancel"
+                app:layout_constraintEnd_toStartOf="@+id/btn_accept"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_accept"
+                style="@style/btn_yellow"
+                android:text="@string/accept"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+                app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.home.refer.ReferVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/bg_white"
+        tools:context=".presentation.home.refer.ReferFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp16">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_heading"
+                style="@style/tv_32_blue"
+                android:layout_marginTop="@dimen/dp16"
+                android:gravity="center"
+                android:text="@string/refer_earn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_intro"
+                style="@style/cv_base"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginEnd="@dimen/dp16"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_heading">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_ludo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/refer"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_refer"
+                style="@style/cv_base"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginEnd="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_intro">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue"
+                    android:padding="@dimen/dp16">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_refer"
+                        style="@style/tv_24_base"
+                        android:gravity="center"
+                        android:text="@string/refer_friends_and_earn_kho_crypto"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_referral_code_value"
+                        style="@style/tv_32_base"
+                        android:layout_marginTop="@dimen/dp32"
+                        android:layout_marginEnd="@dimen/dp16"
+                        android:gravity="center"
+                        android:text="@{viewModel.myReferralCode}"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_copy"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_refer"
+                        tools:text="ARY254" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_referral_code"
+                        style="@style/tv_12_base"
+                        android:layout_marginTop="@dimen/dp8"
+                        android:gravity="center"
+                        android:text="@string/your_referral_code"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_referral_code_value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_referral_code_value" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_copy"
+                        android:layout_width="@dimen/dp24"
+                        android:layout_height="@dimen/dp24"
+                        android:layout_marginTop="@dimen/dp8"
+                        android:background="@drawable/ripple_grey"
+                        android:src="@drawable/ic_copy"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_referral_code"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_referral_code_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_referral_code_value" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_share"
+                        style="@style/btn_yellow"
+                        android:layout_marginTop="@dimen/dp32"
+                        android:text="@string/share_link"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_referral_code" />
+
+                    <TextView
+                        android:id="@+id/tv_refer_info"
+                        style="@style/tv_12_base"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="8dp"
+                        android:text="*Each referral rewards you with 10 passes"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_share"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_enter_referral"
+                style="@style/cv_base"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginEnd="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_refer">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_enter_referral"
+                    visibleOrGone="@{!viewModel.isReferralCompleted}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue"
+                    android:padding="@dimen/dp16"
+                    tools:visibility="gone">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_having_code"
+                        style="@style/tv_24_base"
+                        android:gravity="center"
+                        android:text="@string/referral_code_optional"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ev_referral_code"
+                        style="@style/ev_base"
+                        android:layout_marginTop="@dimen/dp16"
+                        android:hint="@string/enter_referral_code_if_any"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_having_code">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_referral_code"
+                            style="@style/et_base" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_referral_code"
+                        style="@style/btn_yellow"
+                        android:layout_marginTop="@dimen/dp32"
+                        android:text="@string/enter_referral_code"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ev_referral_code" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_referred_by"
+                    visibleOrGone="@{viewModel.isReferralCompleted}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue"
+                    android:padding="@dimen/dp16">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_congratulation"
+                        style="@style/tv_16_base"
+                        setReferredBY="@{viewModel.referredBy}"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/congratulation_you_were_referred_by" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

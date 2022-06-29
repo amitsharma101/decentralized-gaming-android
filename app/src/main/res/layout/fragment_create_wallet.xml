@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.wallet.createWallet.CreateWalletVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/bg_base"
+        android:padding="@dimen/dp16"
+        tools:context=".presentation.wallet.createWallet.CreateWalletFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_heading"
+            style="@style/tv_32_yellow"
+            android:layout_marginTop="@dimen/dp32"
+            android:gravity="center"
+            android:text="@string/setup_crypto_wallet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_wallet"
+            visibleOrGone="@{viewModel.createWallet}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_heading"
+            android:padding="@dimen/dp16"
+            tools:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_create"
+                style="@style/btn_yellow"
+                android:text="@string/create_new_wallet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_import_existing"
+                style="@style/btn_yellow"
+                android:layout_marginTop="@dimen/dp32"
+                android:text="@string/import_existing_wallet"
+                app:layout_constraintEnd_toEndOf="@+id/btn_create"
+                app:layout_constraintStart_toStartOf="@+id/btn_create"
+                app:layout_constraintTop_toBottomOf="@+id/btn_create" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_import_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_heading"
+            android:padding="@dimen/dp16"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ev_mnemonic"
+                style="@style/ev_base"
+                android:hint="@string/enter_mnemonic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_mnemonic"
+                    style="@style/et_base" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_import"
+                style="@style/btn_yellow"
+                android:layout_marginTop="@dimen/dp32"
+                android:text="@string/import_wallet"
+                app:layout_constraintEnd_toEndOf="@+id/ev_mnemonic"
+                app:layout_constraintStart_toStartOf="@+id/ev_mnemonic"
+                app:layout_constraintTop_toBottomOf="@+id/ev_mnemonic" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_save_wallet"
+            visibleOrGone="@{!viewModel.createWallet}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_heading"
+            android:padding="@dimen/dp16">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_text"
+                    style="@style/tv_12_base"
+                    android:gravity="center"
+                    android:text="@string/save_recovery_phrase"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_key"
+                    style="@style/tv_24_yellow"
+                    android:layout_marginTop="@dimen/dp32"
+                    android:layout_marginEnd="@dimen/dp8"
+                    android:gravity="center"
+                    android:text="@{viewModel.mnemonic}"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_copy"
+                    app:layout_constraintStart_toStartOf="@+id/tv_text"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_text"
+                    tools:text="Key1 Key2 Key3 Key4 Key5 Key6 Key7 Key8 Key9" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_copy"
+                    android:layout_width="@dimen/dp36"
+                    android:layout_height="@dimen/dp36"
+                    android:background="@drawable/ripple_grey"
+                    android:src="@drawable/ic_copy"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_key"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_text"
+                    app:layout_constraintStart_toEndOf="@+id/tv_key"
+                    app:layout_constraintTop_toTopOf="@+id/tv_key" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_text_warning"
+                    style="@style/tv_12_base"
+                    android:layout_marginTop="@dimen/dp32"
+                    android:gravity="center"
+                    android:text="@string/recovery_phrase_warning"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_text"
+                    app:layout_constraintStart_toStartOf="@+id/tv_text"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_key" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                style="@style/btn_yellow"
+                android:layout_marginTop="@dimen/dp48"
+                android:text="@string/save_secret_recovery_phrase"
+                app:layout_constraintEnd_toEndOf="@+id/cl_info"
+                app:layout_constraintStart_toStartOf="@+id/cl_info"
+                app:layout_constraintTop_toBottomOf="@+id/cl_info" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_saved"
+                style="@style/btn_yellow"
+                android:layout_marginTop="@dimen/dp32"
+                android:text="@string/i_have_saved_and_sign_in"
+                app:layout_constraintEnd_toEndOf="@+id/btn_save"
+                app:layout_constraintStart_toStartOf="@+id/btn_save"
+                app:layout_constraintTop_toBottomOf="@+id/btn_save" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

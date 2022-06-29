@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.wallet.bsSend.BsSendVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/bs_base"
+        android:padding="@dimen/dp32"
+        tools:background="@color/blue"
+        tools:context=".presentation.wallet.bsSend.BsSendFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_send"
+            style="@style/tv_16_base"
+            android:gravity="center"
+            android:text="Send token feature is currently not available to all the users, it'll be rolled out for everyone soon!"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--            android:id="@+id/ev_account_address"-->
+        <!--            style="@style/ev_base"-->
+        <!--            android:layout_marginTop="@dimen/dp16"-->
+        <!--            android:hint="@string/to_account"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/tv_send">-->
+
+        <!--            <com.google.android.material.textfield.TextInputEditText-->
+        <!--                android:id="@+id/et_account_address"-->
+        <!--                style="@style/et_base" />-->
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--            android:id="@+id/ev_amount"-->
+        <!--            style="@style/ev_base"-->
+        <!--            android:layout_marginTop="@dimen/dp16"-->
+        <!--            android:hint="@string/amount"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/ev_account_address"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/ev_account_address"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/ev_account_address">-->
+
+        <!--            <com.google.android.material.textfield.TextInputEditText-->
+        <!--                android:id="@+id/et_amount"-->
+        <!--                style="@style/et_base" />-->
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <!--        <com.google.android.material.button.MaterialButton-->
+        <!--            android:id="@+id/btn_cancel"-->
+        <!--            style="@style/btn_base"-->
+        <!--            android:layout_marginTop="@dimen/dp32"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            android:text="@string/cancel"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/btn_send"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/ev_amount" />-->
+
+        <!--        <com.google.android.material.button.MaterialButton-->
+        <!--            android:id="@+id/btn_send"-->
+        <!--            style="@style/btn_base"-->
+        <!--            android:text="@string/send"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/btn_cancel"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@+id/btn_cancel"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/btn_cancel" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

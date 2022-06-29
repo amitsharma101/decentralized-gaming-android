@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.wallet.TransactionAdapterVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp16">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_type"
+            setTrxImage="@{viewModel.model.type}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_detail"
+            app:layout_constraintEnd_toStartOf="@+id/cl_detail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_send" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_type"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontal_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_type"
+                style="@style/tv_16_blue"
+                android:layout_marginEnd="@dimen/dp8"
+                android:text="@{viewModel.model.type}"
+                app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Send" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_from"
+                style="@style/tv_12_blue"
+                android:layout_marginTop="@dimen/dp8"
+                android:layout_marginEnd="@dimen/dp8"
+                android:text="@{viewModel.model.sender}"
+                app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_type"
+                tools:text="From account XX" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_amount"
+                style="@style/tv_16_blue"
+                android:layout_marginStart="@dimen/dp8"
+                android:gravity="end"
+                android:text="@{viewModel.model.balance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+                app:layout_constraintTop_toTopOf="@+id/tv_type"
+                tools:text="55 KHO" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_date"
+                style="@style/tv_12_blue"
+                android:layout_marginStart="@dimen/dp8"
+                android:gravity="end"
+                android:text="@{viewModel.model.date}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+                app:layout_constraintTop_toTopOf="@+id/tv_from"
+                tools:text="From account XX" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_separator"
+            style="@style/view_horizontal"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cl_detail"
+            app:layout_constraintStart_toStartOf="@+id/cl_detail"
+            app:layout_constraintTop_toBottomOf="@+id/cl_detail" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

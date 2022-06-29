@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.login.LoginVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/bg_base"
+        android:padding="@dimen/dp16"
+        tools:context=".presentation.login.LoginFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_heading"
+            style="@style/tv_32_yellow"
+            android:layout_marginTop="@dimen/dp32"
+            android:gravity="center"
+            android:text="@string/account_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_avatars"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1.5"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp8"
+            android:src="@drawable/party"
+            app:layout_constraintBottom_toTopOf="@+id/cl_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_heading"  />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatars">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_enter"
+                style="@style/tv_16_base"
+                android:gravity="center"
+                android:text="@string/please_enter_your_mobile_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_enter_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_enter">
+
+                <Spinner
+                    android:id="@+id/spinner_country_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue"
+                    android:focusableInTouchMode="true"
+                    android:spinnerMode="dropdown"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/item_country_code" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_down_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/drop_down_arrow"
+                    app:layout_constraintBottom_toBottomOf="@id/spinner_country_code"
+                    app:layout_constraintEnd_toEndOf="@+id/spinner_country_code"
+                    app:layout_constraintTop_toTopOf="@id/spinner_country_code" />
+
+                <View
+                    android:id="@+id/view_separator"
+                    style="@style/view_vertical_yellow"
+                    android:layout_height="@dimen/dp16"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@id/spinner_country_code"
+                    app:layout_constraintStart_toEndOf="@+id/iv_down_arrow"
+                    app:layout_constraintTop_toTopOf="@id/spinner_country_code" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ev_enter_number"
+                    style="@style/ev_number"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view_separator"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:placeholderText="XXXXXXXXXX">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_enter_number"
+                        style="@style/et_number" />
+
+                    <requestFocus />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ev_enter_otp"
+                style="@style/ev_base"
+                android:layout_marginTop="@dimen/dp16"
+                android:hint="@string/enter_otp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_enter_number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_enter_otp"
+                    style="@style/et_base" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_otp"
+                style="@style/btn_yellow"
+                android:layout_marginTop="@dimen/dp16"
+                android:text="@string/get_otp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ev_enter_otp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                style="@style/btn_yellow"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dp16"
+                android:text="@string/login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ev_enter_otp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

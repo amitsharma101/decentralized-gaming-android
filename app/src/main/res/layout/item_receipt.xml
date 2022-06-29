@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.wallet.bsReceipt.ReceiptAdapterVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_text"
+            style="@style/tv_12_base"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp16"
+            android:text="@{viewModel.model.title}"
+            app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Amount" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_text_value"
+            style="@style/tv_16_base"
+            android:layout_marginStart="@dimen/dp16"
+            android:gravity="end"
+            android:text="@{viewModel.model.titleValue}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintTop_toTopOf="@+id/tv_text"
+            tools:text="0.0000006 ETH" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

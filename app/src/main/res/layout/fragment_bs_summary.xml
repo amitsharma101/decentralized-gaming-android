@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="land.kho.meta.presentation.wallet.bsSummary.BsSummaryVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/bs_base"
+        android:paddingStart="@dimen/dp32"
+        android:paddingEnd="@dimen/dp32"
+        android:paddingBottom="@dimen/dp32"
+        tools:background="@color/blue"
+        tools:context=".presentation.wallet.bsSummary.BsSummaryVM">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_verify"
+            style="@style/tv_16_base"
+            setUnverifiedTokenText="@{viewModel.unverifiedTokens}"
+            visibleOrGone="@{!viewModel.isVerified}"
+            android:layout_marginTop="@dimen/dp32"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Verification your account" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_balance"
+            style="@style/tv_16_base"
+            android:layout_marginTop="@dimen/dp32"
+            android:text="@string/balance"
+            app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_verify" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_balance_value"
+            style="@style/tv_16_base"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintEnd_toStartOf="@+id/iv_verified"
+            app:layout_constraintStart_toEndOf="@+id/horizontal_middle"
+            app:layout_constraintTop_toTopOf="@+id/tv_balance"
+            tools:text="$KHO 0.00" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_verified"
+            android:layout_width="@dimen/dp24"
+            android:layout_marginTop="@dimen/dp32"
+            android:layout_height="@dimen/dp24"
+            setVerifyImageLight="@{viewModel.isVerified}"
+            tools:src="@drawable/ic_verified_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_verify" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_address"
+            style="@style/tv_12_base"
+            android:text="@string/address"
+            app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_copy" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_address_value"
+            style="@style/tv_12_base"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintEnd_toStartOf="@+id/iv_copy"
+            app:layout_constraintStart_toEndOf="@+id/horizontal_middle"
+            app:layout_constraintTop_toTopOf="@+id/tv_address"
+            tools:text="Account Address" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_copy"
+            android:layout_width="@dimen/dp24"
+            android:layout_height="@dimen/dp24"
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@drawable/ripple_grey"
+            android:src="@drawable/ic_copy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_verified" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_wallet"
+            style="@style/btn_yellow"
+            android:layout_marginTop="@dimen/dp16"
+            android:text="@{viewModel.buttonText}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_copy"
+            tools:text="@string/visit_wallet" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,10 @@
+/build
+*/build
+/.idea
+/.gradle
+app/KhoLand.jks
+app/release/*
+local.properties
+*.DS_Store
+*.apk
+*.DS_Store 

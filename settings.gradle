@@ -1,0 +1,3 @@
+rootProject.name = "KhoLand"
+include ':app'
+include ':app:khoWallet'

@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name_release">KhoLand</string>
+    <string name="app_name_debug">KhoLand Debug</string>
+    <string name="default_notification_channel_id">land.kho.meta.debug</string>
+    <string name="reload">Reload</string>
+    <string name="play">Play</string>
+    <string name="wallet">Wallet</string>
+    <string name="create_crypto_account">Create Crypto Account</string>
+    <string name="send_amount">Send Amount</string>
+    <string name="get_balance">Get Balance</string>
+    <string name="send">Send</string>
+    <string name="token">Token</string>
+    <string name="activity">Activity</string>
+    <string name="enter_kholand">Enter KhoLand</string>
+    <string name="receive">Receive</string>
+    <string name="scan_or_share_your_account_address_to_receive">Scan or share your account address to receive</string>
+    <string name="share">Share</string>
+    <string name="to_account">To account</string>
+    <string name="amount">Amount</string>
+    <string name="cancel">Cancel</string>
+    <string name="kholand">KhoLand</string>
+    <string name="game_circle">Games will be available soon!</string>
+    <string name="create_new_wallet">Create New Wallet</string>
+    <string name="import_existing_wallet">Import Existing Wallet</string>
+    <string name="save_secret_recovery_phrase">Save Secret Recovery Phrase</string>
+    <string name="i_have_saved">I have saved</string>
+    <string name="save_recovery_phrase">This is your wallet\'s 12-word secret recovery phrase. Please remember to save it and then confirm by clicking on \'I Have Saved and Sign In\'</string>
+    <string name="recovery_phrase_warning">We don\'t store and ask this secret phrase. If lost it can\'t be recovered and wallet be become inaccessible. Make sure to save it at secure location.</string>
+    <string name="crypto_transactions">Crypto Transactions</string>
+    <string name="enter_mnemonic">Enter mnemonic</string>
+    <string name="import_wallet">Import Wallet</string>
+    <string name="status">Status</string>
+    <string name="view_on_block_explorer">View on block explorer</string>
+    <string name="copy_transaction_id">Copy Transaction ID</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="transaction">Transaction</string>
+    <string name="accept">Accept</string>
+    <string name="gas_fee">Gas Fee</string>
+    <string name="gas_limit">Gas Limit</string>
+    <string name="total">Total</string>
+    <string name="empty_text">Your %1$s will appear here.</string>
+    <string name="nfts">NFTs</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="visit_wallet">View Wallet</string>
+    <string name="sign">Sign</string>
+    <string name="i_have_saved_and_sign_in">I Have Saved and Sign in</string>
+    <string name="no_internet">No Internet</string>
+    <string name="retry">Retry</string>
+    <string name="loading">Loading...</string>
+    <string name="no_internet_loading_error">Ah! server can\'t be reached. Please check your internet connectivity and retry.</string>
+    <string name="setup_crypto_wallet">Setup Crypto Wallet</string>
+    <string name="crypto_wallet">Crypto Wallet</string>
+    <string name="balance">Balance</string>
+    <string name="address">Address</string>
+    <string name="verify_you_account_to_claim_x_tokens">Verify you account to claim %1$s tokens</string>
+    <string name="verify_your_wallet">Verify your wallet</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_new_email_address">Enter New Email Address</string>
+    <string name="verification_mail_has_been_already_send_to_x_check_your_inbox_to_verify">Verification Mail has been already send to %1$s , check your Inbox to verify.</string>
+    <string name="earnings">Earnings</string>
+    <string name="passes">Passes</string>
+    <string name="games">Games</string>
+    <string name="transfer_to_wallet">Transfer to wallet</string>
+    <string name="ludo">Ludo</string>
+    <string name="chances_left">Chances Left</string>
+    <string name="expires">Expires</string>
+    <string name="cost">Cost</string>
+    <string name="renew_now">Renew Now</string>
+    <string name="none">None</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="change_username">Change Username</string>
+    <string name="username">Username</string>
+    <string name="update">Update</string>
+    <string name="crypto_ludo">Crypto Ludo</string>
+    <string name="play_to_earn">Play to Earn $KHO token</string>
+    <string name="play_now">Play now</string>
+    <string name="explore_now">Explore now</string>
+    <string name="metaverse_kholand_title">KhoLand Metaverse</string>
+    <string name="metaverse_socialize_play">Explore beta preview of Metaverse.</string>
+
+    <string name="refer_friends_and_earn_kho_crypto">Refer friends and earn $KHO crypto!</string>
+    <string name="refer_earn"><![CDATA[Refer & Earn]]></string>
+    <string name="your_referral_code">Your Referral Code</string>
+    <string name="enter_referral_code">Enter Referral Code</string>
+
+    <string name="follow_discord">Discord</string>
+    <string name="follow_telegram">Telegram</string>
+    <string name="how_referral_works">How Referral works</string>
+    <string name="share_link">Share Link</string>
+    <string name="invite_your_friends">Invite your friends</string>
+    <string name="just_share_link">just share link</string>
+    <string name="ask_them_to_enter_your_referral_code">Ask them to enter your Referral Code</string>
+    <string name="when_they_installed_app">When they installed app</string>
+    <string name="referral_code_optional">Referral Code (Optional)</string>
+    <string name="enter_referral_code_if_any">Enter Referral Code if any</string>
+    <string name="refer">Refer</string>
+    <string name="share_referral_message">
+        I have invited you to earn an exclusive *$KHO* token.\n\n
+
+        Only use this Referral code\n
+        👉 &#160;*_%1$s_*&#160; 👈\n\n
+
+        🕹️ Win high-worth tokens by playing games.\n\n
+
+        🚀 Prices will increase massively post-release.\n\n
+
+        🏃‍♀️ Hurry up! few tokens are left.\n\n
+
+        🧡 Download https://bit.ly/kholand-android\n\n
+
+        😁 And Thank me later!
+    </string>
+    <string name="congratulation_you_were_referred_by">Congratulation!\nYou were referred by %1$s.\nNow refer friends and earn $KHO crypto</string>
+    <string name="account_login">Join the Party</string>
+    <string name="please_enter_your_mobile_number">Please enter your mobile number to login.</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="login">Login</string>
+    <string name="reward_program">Reward Program</string>
+    <string name="claim_rewards_from_your_kho_token">Claim rewards from your $KHO Token</string>
+    <string name="claim_rewards">Claim Rewards</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="pay_1_pass_win_10_kho">Pay 1 Pass, Win 10 $KHO</string>
+
+</resources>
